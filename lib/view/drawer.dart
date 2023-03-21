@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 
-class Drawer extends StatelessWidget {
-  const Drawer({super.key});
+class DrawerIcon extends StatelessWidget {
+  const DrawerIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer:  Drawer(
-          child: ListView(
+      drawer: Drawer(
+           child: ListView(
             children: [
               DrawerHeader(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/green.png'),
                     fit: BoxFit.cover,
@@ -23,7 +23,7 @@ class Drawer extends StatelessWidget {
                       radius: 40,
                       backgroundImage: AssetImage('assets/images/logo.jpeg'),
                     ),
-                    Text(
+                    const Text(
                       'Future fixer',
                       style: TextStyle(
                         fontSize: 17,
@@ -32,7 +32,7 @@ class Drawer extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Text(
                           'Futurefixer@gmail.com',
                           style: TextStyle(
@@ -52,11 +52,11 @@ class Drawer extends StatelessWidget {
               ),
               ListTile(
 
-                leading: Icon(
+                leading: const Icon(
                   Icons.person,
                   size: 28,
                 ),
-                title: Text(
+                title: const Text(
                   'Future Fixer',
                   style: TextStyle(
                     fontSize: 18,
@@ -69,12 +69,12 @@ class Drawer extends StatelessWidget {
               ),
               ListTile(
 
-                leading: Icon(
+                leading: const Icon(
                   Icons.phone,
                   size: 28,
                   color: Colors.teal,
                 ),
-                title: Text(
+                title: const Text(
                   '03449518940',
                   style: TextStyle(
                     fontSize: 18,
@@ -85,19 +85,19 @@ class Drawer extends StatelessWidget {
 
                 },
               ),
-              new Divider(
+              const Divider(
                 color: Colors.teal,
                 thickness: 3,
                 indent: 10,
                 endIndent: 10,
               ),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.work,
                   size: 28,
                   color: Colors.teal,
                 ),
-                title: Text(
+                title: const Text(
                   'How it works',
                   style: TextStyle(
                     fontSize: 18,
@@ -110,12 +110,12 @@ class Drawer extends StatelessWidget {
               ),
               ListTile(
 
-                leading: Icon(
+                leading: const Icon(
                   Icons.question_answer_outlined,
                   size: 28,
                   color: Colors.teal,
                 ),
-                title: Text(
+                title: const Text(
                   'FAQ',
                   style: TextStyle(
                     fontSize: 18,
@@ -128,12 +128,12 @@ class Drawer extends StatelessWidget {
               ),
               ListTile(
 
-                leading: Icon(
+                leading: const Icon(
                   Icons.home,
                   size: 28,
                   color: Colors.teal,
                 ),
-                title: Text(
+                title: const Text(
                   'Home',
                   style: TextStyle(
                     fontSize: 18,
@@ -144,7 +144,7 @@ class Drawer extends StatelessWidget {
 
                 },
               ),
-              new Divider(
+              const Divider(
                 color: Colors.teal,
                 thickness: 3,
                 indent: 10,
@@ -152,12 +152,12 @@ class Drawer extends StatelessWidget {
               ),
               ListTile(
 
-                leading: Icon(
+                leading: const Icon(
                   Icons.logout,
                   size: 28,
                   color: Colors.teal,
                 ),
-                title: Text(
+                title: const Text(
                   'Sign-Out',
                   style: TextStyle(
                     fontSize: 18,

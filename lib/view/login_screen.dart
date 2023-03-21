@@ -1,9 +1,12 @@
+import 'package:carobar/view/registration_screen.dart';
+import 'package:carobar/view/components/login_button.dart';
 import 'package:flutter/material.dart';
+import 'package:carobar/view/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
 
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
+  final TextEditingController  _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
 
   LoginScreen({super.key});
 
@@ -13,7 +16,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 40.0),
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
             height: MediaQuery.of(context).size.height,
             width: double.infinity,
             child: Column(
@@ -21,16 +24,23 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   backgroundColor: Colors.transparent,
-                  backgroundImage: AssetImage('Assets/MECH.png'),
+                  backgroundImage: AssetImage('assets/images/MECH.png'),
                   radius: 80.0,
                 ),
-                SizedBox(height: 30.0),
+                const SizedBox(height: 30.0),
                 buildTextField(_emailController, 'Email or Phone', Icons.mail_outline_rounded),
                 SizedBox(height: 20.0),
                 buildTextField(_phoneController, 'Password', Icons.lock_outline_rounded),
                 SizedBox(height: 20.0),
-                buildButton('Login'),
-                TextButton(onPressed: () {},
+                LoginButton('Login'),
+                TextButton(onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context)=> RegistrationPage(),
+                    ),
+                  );
+
+                },
                     child:
                     Text(' Create Account to Sign Up',)
                 ),
@@ -59,39 +69,6 @@ class LoginScreen extends StatelessWidget {
       );
     }
 
-    Widget buildButton(String text, {bool isOutline = false}) {
-      return SizedBox(
-        width: double.infinity,
-        height: 50.0,
-        child: isOutline
-            ? OutlinedButton(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(color: Colors.teal),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-            ),
-          ),
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.teal),
-          ),
-        )
-            : ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            primary: Colors.teal,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-            ),
-          ),
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      );
-    }
   }
 
 

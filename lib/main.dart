@@ -1,5 +1,6 @@
 import 'package:carobar/view/book_screen.dart';
 import 'package:carobar/view/home_screen.dart';
+import 'package:carobar/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,9 +19,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: Home(),
-
-
+      //home: Home(),
+      initialRoute: 'LoginScreen',
+       routes: {'LoginScreen':(context)=>LoginScreen()},
     );
   }
 }

@@ -1,14 +1,182 @@
+import 'package:carobar/view/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:carobar/view/components/elevated_button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      drawer:const Drawer(
+      drawer: Drawer(backgroundColor: Colors.teal[700],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
 
+        ),
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/green.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                children: const [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.black,
+                    backgroundImage: AssetImage('assets/images/logo.jpeg'),
+                  ),
+                  Text(
+                    'Future fixer',
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  // Row(
+                  //   children: const [
+                  //     Text(
+                  //       'Futurefixer@gmail.com',
+                  //       style: TextStyle(
+                  //         fontSize: 15,
+                  //         color: Colors.white,
+                  //       ),
+                  //       textAlign: TextAlign.center,
+                  //     ),
+                  //     Icon(
+                  //       Icons.arrow_drop_down_circle_outlined,
+                  //       size: 13,
+                  //     ),
+                  //   ],
+                  // ),
+                ],
+              ),
+            ),
+            ListTile(
 
+              leading: const Icon(
+                Icons.person, color: Colors.black,
+                size: 28,
+              ),
+              title: const Text(
+                'Future Fixer',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+
+              },
+            ),
+            ListTile(
+
+              leading: const Icon(
+                Icons.phone,
+                size: 28,
+                color: Colors.black,
+              ),
+              title: const Text(
+                '03449518940',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+
+              },
+            ),
+            const Divider(
+              color: Colors.black,
+              thickness: 3,
+              indent: 10,
+              endIndent: 10,
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.work,
+                size: 28,
+                color: Colors.black,
+              ),
+              title: const Text(
+                'How it works',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+
+              },
+            ),
+            ListTile(
+
+              leading: const Icon(
+                Icons.question_answer_outlined,
+                size: 28,
+                color: Colors.black,
+              ),
+              title: const Text(
+                'FAQ',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+
+              },
+            ),
+            ListTile(
+
+              leading: const Icon(
+                Icons.home,
+                size: 28,
+                color: Colors.black,
+              ),
+              title: const Text(
+                'Home',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+
+              },
+            ),
+            const Divider(
+              color: Colors.black,
+              thickness: 3,
+              indent: 10,
+              endIndent: 10,
+            ),
+            ListTile(
+
+              leading: const Icon(
+                Icons.logout,
+                size: 28,
+                color: Colors.black,
+              ),
+              title: const Text(
+                'Sign-Out',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+
+              },
+            ),
+          ],
+        ),
       ),
+
       appBar: AppBar(
         title: const Text('Mechanify'),
         centerTitle: true,
@@ -22,16 +190,16 @@ class Home extends StatelessWidget {
           ),
         ),
         titleTextStyle: const TextStyle(
-          fontStyle: FontStyle.italic,
+          fontStyle: FontStyle.normal,
           fontFamily: 'Ariel',
           fontWeight: FontWeight.bold,
-          color: Colors.black,
-          fontSize: 42.0,
+          color: Colors.white,
+          fontSize: 36.0,
         ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(
-              Icons.car_repair_rounded, color: Colors.black,
+              Icons.car_repair_rounded, color: Colors.white,
             ),
             onPressed: () {
             },
@@ -42,46 +210,66 @@ class Home extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          Container(
+            child: SizedBox(
+              height: 170,
+              child: Image.asset('assets/images/res_home.png'),
+            ),
+          ),
           //Ink.image(image: AssetImage('assets/images/res_home.png')),
-           const Image(image: AssetImage('assets/images/res_home.png')),
-         Container(
-           padding: const EdgeInsets.all(6),
-           color: Colors.teal,
-           child: Row(
-             children:  const <Widget>[
-               Expanded(
-                   child:  Text('OUR SERVICES', style: TextStyle(
-                     color: Colors.black,
-                     fontSize: 32,
-                     fontFamily: 'Ariel',
-                     fontStyle: FontStyle.italic,
-                     fontWeight: FontWeight.bold,
-                   ),
-                     textAlign: TextAlign.start,
-                   ),
+           //const Image(image: AssetImage('assets/images/car-wash.png')),
+         Center(
+           child: Container(
+             padding: const EdgeInsets.all(6),
+             color: Colors.teal[800],
+             child: Row(
+               children:  const <Widget>[
+                 Expanded(
+                     child:  Center(
+                       child: Text('OUR SERVICES', style: TextStyle(
 
-               )
-             ]
+                         color: Colors.white,
+                         fontSize: 26,
+                         fontFamily: 'Ariel',
+                         fontStyle: FontStyle.normal,
+                         fontWeight: FontWeight.bold,
+                       ),
+                         textAlign: TextAlign.start,
+                       ),
+                     ),
+
+                 )
+               ]
+             ),
            ),
          ),
-           Row(
-             children: const [
-             //Image(image: AssetImage('assets/images/car-wash.png')),
-               InsertButton('Engine Service', Image(image: AssetImage('assets/images/res_home.png'))),
-               InsertButton("Car Wash", Image(image: AssetImage('assets/images/car-wash.png'))),
-            ]
+           Center(
+             child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+               children: const [
+               //Image(image: AssetImage('assets/images/car-wash.png')),
+                 InsertButton('Engine Service'),
+                 InsertButton("Car Wash"),
+              ]
+             ),
            ),
-          Row(
-              children: const [
-                InsertButton("Oil Change", Image(image: AssetImage('assets/images/oil.png'))),
-                InsertButton("paint",   Image(image: AssetImage('assets/images/spray-gun.png'))),
-              ]
+          Center(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  InsertButton("Oil Change"),
+                  InsertButton("Paint"),
+                ]
+            ),
           ),
-          Row(
-              children: const [
-                InsertButton("Accessories",  Image(image:AssetImage('assets/images/car-battery.png'))),
-                InsertButton("Tyre Change",  Image(image:AssetImage('assets/images/rim.png'))),
-              ]
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  InsertButton("Accessories"),
+                  InsertButton("Tyre Change"),
+                ]
+            ),
           ),
 
         ],
@@ -91,44 +279,7 @@ class Home extends StatelessWidget {
   }
 }
 
-class InsertButton extends StatelessWidget{
-  final String? name;
-  final Image? image;
-  const InsertButton(this.name,this.image, {super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(4),
-      width: 194,
-      height: 130,
-      child: ElevatedButton(
-        onPressed: () {},
 
-      style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black87,
-          fixedSize: const Size(70, 30),
-          side: const BorderSide(color: Colors.teal),
-          //side: BorderSide(width: 6, color: Colors.black),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          )
-      ),
-        //Image(image: AssetImage('$image'))
-
-        child: Text('$name',
-          style: const TextStyle(
-            fontFamily: 'Ariel',
-            fontStyle: FontStyle.italic,
-            fontWeight:FontWeight.normal,
-            color: Colors.teal
-          ),
-        ),
-
-
-      ),
-      );
-  }
-}
 
 
 
