@@ -1,7 +1,6 @@
 import 'package:carobar/view/registration_screen.dart';
 import 'package:carobar/view/components/login_button.dart';
 import 'package:flutter/material.dart';
-import 'package:carobar/view/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -29,20 +28,18 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 30.0),
                 buildTextField(_emailController, 'Email or Phone', Icons.mail_outline_rounded),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 buildTextField(_phoneController, 'Password', Icons.lock_outline_rounded),
-                SizedBox(height: 20.0),
-                LoginButton('Login'),
+                const SizedBox(height: 20.0),
+                const LoginButton('Login'),
                 TextButton(onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context)=> RegistrationPage(),
                     ),
                   );
-
                 },
-                    child:
-                    Text(' Create Account to Sign Up',)
+                    child: const Text(' Create Account to Sign Up',)
                 ),
               ],
             ),
@@ -54,21 +51,20 @@ class LoginScreen extends StatelessWidget {
     Widget buildTextField(TextEditingController controller, String labelText, IconData icon) {
       return TextField(
         controller: controller,
-        style: TextStyle(color: Colors.teal),
+        style: const TextStyle(color: Colors.teal),
         decoration: InputDecoration(
           labelText: labelText,
-          labelStyle: TextStyle(color: Colors.teal),
+          labelStyle: const TextStyle(color: Colors.teal),
           prefixIcon: Icon(icon, color: Colors.teal),
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.teal),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.teal),
           ),
         ),
       );
     }
-
   }
 
 

@@ -15,27 +15,28 @@ class _ThankYouScreen extends State<ThankYouScreen> {
     return Scaffold(
         backgroundColor: themeColor,
         body: Container(
-            margin: EdgeInsets.symmetric(
+            margin: const EdgeInsets.symmetric(
                 vertical: 20, horizontal: 20),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                // mainAxisAlignment: MainAxisAlignment.,
                 children: [
                   Center(
                     child: Container(
-                      margin: EdgeInsets.only(top: 30),
-                      height: 30,
+                      margin: const EdgeInsets.only(top: 30),
+                      height: 200,
                       padding: const EdgeInsets.all(35),
                       decoration: const BoxDecoration(
                         color: Colors.black,
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
-                        "assets/card.png",
+                        "assets/images/card.png",
                         fit: BoxFit.contain,
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   const Center(
@@ -47,16 +48,7 @@ class _ThankYouScreen extends State<ThankYouScreen> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const Center(
-                    child: Text(
-                      "Payment done Successfully",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   const Center(
@@ -77,7 +69,7 @@ class _ThankYouScreen extends State<ThankYouScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Center(

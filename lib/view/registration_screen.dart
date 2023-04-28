@@ -39,7 +39,7 @@ class RegistrationPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: 'Phone number',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
+                    borderSide: BorderSide(color: Colors.teal),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.teal),

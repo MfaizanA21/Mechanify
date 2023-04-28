@@ -1,7 +1,6 @@
 import 'package:carobar/view/home_screen.dart';
 import 'package:carobar/view/mechanics.dart';
 import 'package:flutter/material.dart';
-import 'package:carobar/view/mechanics.dart';
 
 class  LoginButton extends StatelessWidget {
   final String? name;
@@ -15,15 +14,15 @@ class  LoginButton extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context)=> Home(),
+              builder: (context)=> const Home(),
             ),
           );
         },
 
         style: ElevatedButton.styleFrom(
-        primary: Colors.teal,
+        backgroundColor: Colors.teal,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(25.0),
         ),
       ),
         //Image(image: AssetImage('$image'))

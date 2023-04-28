@@ -5,12 +5,13 @@ class OtpScreen extends StatelessWidget {
   final TextEditingController _textController = TextEditingController();
   OtpScreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -22,11 +23,11 @@ class OtpScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: _textController,
               keyboardType: TextInputType.number,
-              maxLength: 6,
+              maxLength: 4,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 24.0,
@@ -34,7 +35,7 @@ class OtpScreen extends StatelessWidget {
               ),
               cursorColor: Colors.white,
               decoration: InputDecoration(
-                hintText: '000000',
+                hintText: '0000',
                 hintStyle: TextStyle(
                   color: Colors.white.withOpacity(0.5),
                   fontSize: 24.0,
@@ -54,12 +55,12 @@ class OtpScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context)=> const  Home(),
+                    builder: (context)=> const Home(),
                   ),
                 );
               },
@@ -75,7 +76,7 @@ class OtpScreen extends StatelessWidget {
                   horizontal: 32.0,
                 ),
               ),
-              child: Text('Verify'),
+              child: const Text('Verify'),
             ),
           ],
         ),
