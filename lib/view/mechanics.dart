@@ -9,54 +9,39 @@ class MechanicList extends StatelessWidget {
     Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        leading:
-        IconButton(icon: const Icon(Icons.arrow_back_ios), onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context)=> const  Home(),
+        appBar:AppBar(
+          title: const Text('Mechanify'),
+          centerTitle: true,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.teal.shade400, Colors.teal.shade200]
+                )
             ),
-          );
-        }),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: <Color>[Colors.black45, Colors.teal]
-              )
           ),
-        ),
-        title: const Text(
-          'Mechanify',
-          style: TextStyle(
+          titleTextStyle: const TextStyle(
+            fontStyle: FontStyle.normal,
+            fontFamily: 'heading',
+            fontWeight: FontWeight.normal,
             color: Colors.white,
+            fontSize: 36.0,
           ),
-        ),
-        titleTextStyle: const TextStyle(
-          fontStyle: FontStyle.normal,
-          fontFamily: 'Ariel',
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          fontSize: 36.0,
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.car_repair_rounded),
-            onPressed: () {
+          actions:  <Widget>[
+            // Image(
+            //   image: AssetImage('assets/images/MECH.png'),
+            //   height: 25,
+            //   width: 25,
+            // )
+            IconButton(
+              icon: const Icon(Icons.car_repair_rounded),
+              onPressed: () {
 
-            },
-          ),
-        ],
-        elevation: 15,
-        backgroundColor: Colors.teal,
-        foregroundColor: Colors.white,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(5),
-            )),
-      ),
+              },
+            ),
+          ],
+        ),
 
 
       body: Column(

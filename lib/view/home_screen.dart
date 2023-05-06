@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carobar/view/components/elevated_button.dart';
 import 'login_screen.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -181,20 +183,23 @@ class Home extends StatelessWidget {
         ),
         titleTextStyle: const TextStyle(
           fontStyle: FontStyle.normal,
-          fontFamily: 'Arial',
-          fontWeight: FontWeight.bold,
+          fontFamily: 'heading',
+          fontWeight: FontWeight.normal,
           color: Colors.white,
           fontSize: 36.0,
         ),
-        actions: <Widget>[
+        actions:  <Widget>[
+          // Image(
+          //   image: AssetImage('assets/images/MECH.png'),
+          //   height: 25,
+          //   width: 25,
+          // )
           IconButton(
-            icon: const Icon(
-              Icons.car_repair_rounded, color: Colors.white,
-            ),
+            icon: const Icon(Icons.car_repair_rounded),
             onPressed: () {
 
             },
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -205,12 +210,15 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(
-                height: 170,
-                child: Image.asset('assets/images/res_home.png'),
+               ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                 child: Image.asset('assets/images/res_home.png'),
+
               ),
-              //Ink.image(image: AssetImage('assets/images/res_home.png')),
-               //const Image(image: AssetImage('assets/images/car-wash.png')),
+              // SizedBox(
+              //   height: 170,
+              //   child: Image.asset('assets/images/res_home.png'),
+              // ),
              Center(
                child: Container(
                  decoration: BoxDecoration (
@@ -229,9 +237,9 @@ class Home extends StatelessWidget {
 
                              color: Colors.white,
                              fontSize: 26,
-                             fontFamily: 'Arial',
+                             fontFamily: 'heading',
                              fontStyle: FontStyle.normal,
-                             fontWeight: FontWeight.bold,
+                             fontWeight: FontWeight.w100,
                            ),
                              textAlign: TextAlign.start,
                            ),
@@ -245,10 +253,10 @@ class Home extends StatelessWidget {
                Center(
                  child: Row(
                      mainAxisAlignment: MainAxisAlignment.center,
-                   children:   [
+                   children: [
                    //Image(image: AssetImage('assets/images/car-wash.png')),
-                     InsertButton('Engine', Icons.engineering_rounded,Colors.red.shade100),
-                     InsertButton('Car Wash', Icons.car_repair_rounded,Colors.lightGreen.shade200),
+                     InsertButton('Engine', 'assets/images/engineering (1).png',Colors.red.shade100),
+                     InsertButton('Car Wash', 'assets/images/car-wash.png',Colors.lightGreen.shade100),
                   ]
                  ),
                ),
@@ -256,8 +264,8 @@ class Home extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children:   [
-                      InsertButton('Oil Change', Icons.oil_barrel_rounded,Colors.amber.shade100),
-                      InsertButton('Paint', Icons.format_color_fill_rounded,Colors.deepPurple.shade200),
+                      InsertButton('Oil Change', 'assets/images/oil.png',Colors.amber.shade100),
+                      InsertButton('Paint Job', 'assets/images/spray-gun.png',Colors.deepPurple.shade100),
                     ]
                 ),
               ),
@@ -265,8 +273,8 @@ class Home extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                     children:   [
-                      InsertButton('Accesories', Icons.account_tree_rounded,Colors.lightBlue.shade200),
-                      InsertButton('Tyre Change', Icons.radio_button_on_rounded,Colors.teal.shade100),
+                      InsertButton('Accesories', 'assets/images/car-battery.png',Colors.lightBlue.shade100),
+                      InsertButton('Tyre Change', 'assets/images/rim.png',Colors.teal.shade100),
                     ]
                 ),
               ),

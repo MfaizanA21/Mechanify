@@ -3,17 +3,17 @@ import 'package:carobar/view/mechanics.dart';
 
 class InsertButton extends StatelessWidget{
   final String name;
-   final IconData icon;
-  //final AssetImage pic;
+  // final IconData icon;
+  final String imageData;
   final Color buttonColor;
-  const InsertButton(this.name,this.icon,this.buttonColor,{super.key});
+  const InsertButton(this.name,this.imageData,this.buttonColor,{super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 140,
       width: 190,
       padding: const EdgeInsets.only(top: 6, bottom: 6, right: 4, left: 4),
-      child: ElevatedButton.icon(
+      child: ElevatedButton(
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
@@ -21,16 +21,7 @@ class InsertButton extends StatelessWidget{
             ),
           );
         },
-        icon: Icon(icon, color: Colors.black,),
-        label: Text(name,textAlign: TextAlign.justify,
-        style: const TextStyle(
-            fontFamily: "Ariel",
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.normal,
-            color: Colors.black,
-            fontSize: 14
-        ),
-      ),
+        // child: Image.asset('$imageData'),
 
         style: ElevatedButton.styleFrom(
             backgroundColor: buttonColor,
@@ -41,6 +32,34 @@ class InsertButton extends StatelessWidget{
               borderRadius: BorderRadius.circular(30),
             )
         ),
+        // icon: Icon(icon, color: Colors.black,),
+        child: Row(
+          children: [
+            Image(
+              image: AssetImage(imageData),
+              height: 50,
+              width: 70,
+            ),
+            Text(name,textAlign: TextAlign.justify,
+              style: const TextStyle(
+                  fontFamily: 'thin.ttf',
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                  fontSize: 14
+              ),
+            ),
+          ],
+        )
+      //   child: Text(name,textAlign: TextAlign.justify,
+      //   style: const TextStyle(
+      //       fontFamily: "Ariel",
+      //       fontStyle: FontStyle.normal,
+      //       fontWeight: FontWeight.normal,
+      //       color: Colors.black,
+      //       fontSize: 14
+      //   ),
+      // ),
       ),
     );
   }
