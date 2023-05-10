@@ -1,87 +1,127 @@
 import 'package:flutter/material.dart';
-import 'package:carobar/view/home_screen.dart';
-import 'package:carobar/view/otp_screen.dart';
+import '../widgets/background.dart';
+import '../widgets/text.dart';
 
-class RegistrationPage extends StatelessWidget {
-  final TextEditingController phoneNumberController = TextEditingController();
+const TextStyle kDefaultTextStyle = TextStyle(
+  fontSize: 40,
+  fontWeight: FontWeight.w700,
+  color: Colors.white,
+);
 
-  RegistrationPage({super.key});
+const TextStyle kButtonTextStyle = TextStyle(
+  fontSize: 16, // Decreased font size to 16
+  fontWeight: FontWeight.w600,
+  color: Colors.black, // Set the text color to black
+);
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.6,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: const DecorationImage(
-                  image: AssetImage('assets/images/asd.jpeg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            const SizedBox(height: 15),
-            const CircleAvatar(
-              radius: 40,
-              backgroundImage: AssetImage('assets/images/logo.jpeg'),
-            ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                style: const TextStyle(color: Colors.teal),
-                controller: phoneNumberController,
-                decoration: const InputDecoration(
-                  hintText: 'Phone number',
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.teal),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.teal),
-                  ),
-                  filled: true,
-                  fillColor: Colors.black,
-                  prefixIcon: Icon(
-                    Icons.phone,
-                    color: Colors.teal,
-                  ),
-                  hintStyle: TextStyle(
-                    fontFamily: 'Ariel',
-                    fontSize: 19,
-                    color: Colors.teal,
-                  ),
-                ),
-                keyboardType: TextInputType.phone,
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context)=> OtpScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter RegistrationPage',
+      home: RegistrationPage(),
+    );
+  }
+}
+
+class RegistrationPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        BackgroundImage(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Container(
+                    height: 150,
+                    child: Center(
+                      child: Text(
+                        'Mechanify',
+                        style: kDefaultTextStyle,
+                      ),
                     ),
-                  );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.black,
-              ),
-              child: const Text(
-                'Register',
-                style: TextStyle(
-                  fontFamily: 'Ariel',
-                  fontSize: 19,
-                  color: Colors.teal,
-                ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            TextInput(
+                              icon: Icons.phone_sharp,
+                              hint: 'Phone number',
+                              inputType: TextInputType.number,
+                            ),
+                            TextInput(
+                              icon: Icons.mail,
+                              hint: 'Email',
+                              inputType: TextInputType.emailAddress,
+                            ),
+                            TextInput(
+                              icon: Icons.lock,
+                              hint: 'Password',
+                              inputType: TextInputType.visiblePassword,
+                            ),
+                            SizedBox(height: 10),
+                            Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                  width: 2,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Center(
+                          child: Container(
+                            width: 120,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                // Handle register button press
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.teal,
+                                padding: EdgeInsets.symmetric(vertical: 20),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  side: BorderSide(color: Colors.black87),
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Register',
+                                  style: kButtonTextStyle,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }
