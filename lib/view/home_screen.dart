@@ -210,13 +210,11 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const SizedBox(height: 20),
                ClipRRect(
                 borderRadius: BorderRadius.circular(4),
                  child: Image.asset('assets/images/res_home.png'),
 
               ),
-              const SizedBox(height: 20),
               // SizedBox(
               //   height: 170,
               //   child: Image.asset('assets/images/res_home.png'),
@@ -252,9 +250,9 @@ class Home extends StatelessWidget {
                  ),
                ),
              ),
-               Flexible(
+               Center(
                  child: Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     mainAxisAlignment: MainAxisAlignment.center,
                    children: [
                    //Image(image: AssetImage('assets/images/car-wash.png')),
                      InsertButton('Engine', 'assets/images/engineering (1).png',Colors.red.shade100),
@@ -262,18 +260,18 @@ class Home extends StatelessWidget {
                   ]
                  ),
                ),
-              Flexible(
+              Center(
                 child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children:   [
                       InsertButton('Oil Change', 'assets/images/oil.png',Colors.amber.shade100),
                       InsertButton('Paint Job', 'assets/images/spray-gun.png',Colors.deepPurple.shade100),
                     ]
                 ),
               ),
-              Flexible(
+              Center(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                     children:   [
                       InsertButton('Accesories', 'assets/images/car-battery.png',Colors.lightBlue.shade100),
                       InsertButton('Tyre Change', 'assets/images/rim.png',Colors.teal.shade100),
