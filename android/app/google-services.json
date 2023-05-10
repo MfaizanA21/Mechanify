@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "918541678045",
+    "project_id": "mechanify-d39d9",
+    "storage_bucket": "mechanify-d39d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918541678045:android:239f622650ec3be328b234",
+        "android_client_info": {
+          "package_name": "com.example.carobar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918541678045-7d74qtgh7n12ffr02gsq814qog8eq6c1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carobar",
+            "certificate_hash": "90cc13406e57308152144afda9be9d7118fa5775"
+          }
+        },
+        {
+          "client_id": "918541678045-6j1m4vmfogpb7636o07dt0n2gu9566hd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzLa7siWW8iG3U-DJL0nl8Rh5B9pj0WvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918541678045-6j1m4vmfogpb7636o07dt0n2gu9566hd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
