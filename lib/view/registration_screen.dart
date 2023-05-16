@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import '../widgets/background.dart';
-import '../widgets/text.dart';
 
 const TextStyle kDefaultTextStyle = TextStyle(
   fontSize: 40,
   fontWeight: FontWeight.w700,
-  color: Colors.white,
+  color: Colors.black,
 );
 
 const TextStyle kButtonTextStyle = TextStyle(
-  fontSize: 16, // Decreased font size to 16
+  fontSize: 16,
   fontWeight: FontWeight.w600,
-  color: Colors.black, // Set the text color to black
+  color: Colors.black,
 );
 
 void main() {
@@ -32,96 +30,140 @@ class MyApp extends StatelessWidget {
 class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        BackgroundImage(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          body: SingleChildScrollView(
-            child: SafeArea(
-              child: Column(
-                children: [
-                  Container(
-                    height: 150,
-                    child: Center(
-                      child: Text(
+    return Scaffold(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.grey, Colors.grey],
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 150,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 20),
+                      Text(
                         'Mechanify',
                         style: kDefaultTextStyle,
                       ),
-                    ),
+                      SizedBox(height: 10), // Adjusted the height here
+                      Image.asset(
+                        'assets/images/MECH.png', // Replace with your logo image path
+                        width: 100,
+                        height: 200,
+                      ),
+                      SizedBox(height: 20),
+                    ],
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    child: Column(
+                ),
+              ),
+              SizedBox(height: 30),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            TextInput(
-                              icon: Icons.phone_sharp,
-                              hint: 'Phone number',
-                              inputType: TextInputType.number,
+                        TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.phone_sharp),
+                            hintText: 'Phone number',
+                            hintStyle: TextStyle(color: Colors.black),
+                            filled: true,
+                            fillColor: Colors.grey,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            TextInput(
-                              icon: Icons.mail,
-                              hint: 'Email',
-                              inputType: TextInputType.emailAddress,
-                            ),
-                            TextInput(
-                              icon: Icons.lock,
-                              hint: 'Password',
-                              inputType: TextInputType.visiblePassword,
-                            ),
-                            SizedBox(height: 10),
-                            Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(16),
-                                border: Border.all(
-                                  width: 2,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        Center(
-                          child: Container(
-                            width: 120,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Handle register button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.teal,
-                                padding: EdgeInsets.symmetric(vertical: 20),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side: BorderSide(color: Colors.black87),
-                                ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Register',
-                                  style: kButtonTextStyle,
-                                ),
-                              ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
                             ),
                           ),
+                          keyboardType: TextInputType.number,
+                        ),
+                        SizedBox(height: 20),
+                        TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.mail),
+                            hintText: 'Email',
+                            hintStyle: TextStyle(color: Colors.black),
+                            filled: true,
+                            fillColor: Colors.grey,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                        ),
+                        SizedBox(height: 20),
+                        TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.lock),
+                            hintText: 'Password',
+                            hintStyle: TextStyle(color: Colors.black),
+                            filled: true,
+                            fillColor: Colors.grey,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          keyboardType: TextInputType.visiblePassword,
                         ),
                       ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: 20),
+                    Center(
+                      child: Container(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed:
+                              () {
+// Handle register button press
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            padding: EdgeInsets.symmetric(vertical: 20),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              side: BorderSide(color: Colors.transparent),
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Register',
+                              style: kButtonTextStyle,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

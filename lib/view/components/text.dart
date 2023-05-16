@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
   const TextInput({
-    Key key,
-    @required this.icon,
-    @required this.hint,
-    this.inputType,
-    this.inputAction,
+    key,
+    required this.icon,
+    required this.hint,
+    required this.inputType,
+
+
   }) : super(key: key);
 
   final IconData icon;
   final String hint;
   final TextInputType inputType;
-  final TextInputAction inputAction;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class TextInput extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[600].withOpacity(0.5),
+          color: Colors.grey[600],
           borderRadius: BorderRadius.circular(16),
         ),
         child: TextField(
@@ -49,7 +49,6 @@ class TextInput extends StatelessWidget {
             fontSize: 16,
           ),
           keyboardType: inputType,
-          textInputAction: inputAction,
         ),
       ),
     );
