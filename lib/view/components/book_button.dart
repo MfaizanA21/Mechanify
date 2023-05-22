@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carobar/view/book_screen.dart';
 
 class  BookButton extends StatelessWidget {
-  final String? name;
-  final String? contact;
+  final String name;
+  final String contact;
   const BookButton(this.name,this.contact,{super.key});
 
   @override

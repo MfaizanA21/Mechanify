@@ -75,9 +75,9 @@ class _ThankYouScreen extends State<ThankYouScreen> {
                   Center(
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(
+                        Navigator.of(context).pop(
                           MaterialPageRoute(
-                            builder: (context)=> Home(),
+                            builder: (context)=> const Home(),
                           ),
                         );
                       },

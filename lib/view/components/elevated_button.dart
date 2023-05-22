@@ -6,7 +6,7 @@ class InsertButton extends StatelessWidget{
   // final IconData icon;
   final String imageData;
   final Color buttonColor;
-  const InsertButton(this.name,this.imageData,this.buttonColor,{super.key});
+   const InsertButton(this.name,this.imageData,this.buttonColor,{super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

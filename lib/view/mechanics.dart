@@ -29,11 +29,6 @@ class MechanicList extends StatelessWidget {
             fontSize: 36.0,
           ),
           actions:  <Widget>[
-            // Image(
-            //   image: AssetImage('assets/images/MECH.png'),
-            //   height: 25,
-            //   width: 25,
-            // )
             IconButton(
               icon: const Icon(Icons.car_repair_rounded),
               onPressed: () {

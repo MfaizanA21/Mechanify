@@ -2,160 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:carobar/view/final_screen.dart';
 import 'package:carobar/view/mechanics.dart';
 
-// class BookingPage extends StatelessWidget {
-//   final TextEditingController dateController = TextEditingController();
-//   final TextEditingController timeController = TextEditingController();
-//   final TextEditingController paymentController = TextEditingController();
-//
-//   BookingPage({super.key});
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.black,
-//       appBar:AppBar(
-//         title: const Text('Mechanify'),
-//         centerTitle: true,
-//         flexibleSpace: Container(
-//           decoration: BoxDecoration(
-//               gradient: LinearGradient(
-//                   begin: Alignment.centerLeft,
-//                   end: Alignment.centerRight,
-//                   colors: <Color>[Colors.teal.shade400, Colors.teal.shade200]
-//               )
-//           ),
-//         ),
-//         titleTextStyle: const TextStyle(
-//           fontStyle: FontStyle.normal,
-//           fontFamily: 'heading',
-//           fontWeight: FontWeight.normal,
-//           color: Colors.white,
-//           fontSize: 36.0,
-//         ),
-//         actions:  <Widget>[
-//           // Image(
-//           //   image: AssetImage('assets/images/MECH.png'),
-//           //   height: 25,
-//           //   width: 25,
-//           // )
-//           IconButton(
-//             icon: const Icon(Icons.car_repair_rounded),
-//             onPressed: () {
-//
-//             },
-//           ),
-//         ],
-//       ),
-//       body: SingleChildScrollView(
-//         child: Padding(
-//             padding: const EdgeInsets.all(20.0),
-//             child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                 const SizedBox(height: 30),
-//             const Center(
-//               child: Text(
-//                 'Schedule Meeting',
-//                 style: TextStyle(
-//                   color: Colors.teal,
-//                   fontSize: 24,
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//             ),
-//             const SizedBox(height: 50),
-//             const Center(
-//               child: CircleAvatar(
-//                 radius: 80,
-//                 backgroundImage:  AssetImage('assets/images/asd.jpeg'),
-//               ),
-//             ),
-//             const SizedBox(height: 40),
-//          TextField(
-//           controller: dateController,
-//           decoration: const InputDecoration(
-//             hintText: 'Enter Date',
-//             hintStyle: TextStyle(color: Colors.white),
-//             enabledBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.teal),
-//             ),
-//             focusedBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.teal),
-//             ),
-//           ),
-//           style: const TextStyle(color: Colors.teal),
-//         ),
-//         const SizedBox(height: 20),
-//         TextField(
-//           controller: timeController,
-//           decoration: const InputDecoration(
-//             hintText: 'Select Time',
-//             hintStyle: TextStyle(color: Colors.white),
-//             enabledBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.teal),
-//             ),
-//             focusedBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.teal),
-//             ),
-//           ),
-//           style: const TextStyle(color: Colors.teal),
-//         ),
-//         const SizedBox(height: 20),
-//         TextField(
-//           controller: paymentController,
-//           decoration: const InputDecoration(
-//             hintText: 'Enter Payment',
-//             hintStyle: TextStyle(color: Colors.white),
-//             enabledBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.teal),
-//             ),
-//             focusedBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.teal),
-//             ),
-//           ),
-//           style: const TextStyle(color: Colors.teal),
-//         ),
-//                   const SizedBox(height: 30),
-//                   Center(
-//                     child: SizedBox(
-//                       height: 40,
-//                       width: 90,
-//                       child: ElevatedButton(onPressed: ()
-//                           {
-//                             Navigator.of(context).push(
-//                               MaterialPageRoute(
-//                                 builder: (context)=> const ThankYouScreen(),
-//                               ),
-//                             );
-//
-//                           },
-//                           style:
-//                         ElevatedButton.styleFrom(
-//
-//                           backgroundColor: Colors.teal,
-//                           shape: RoundedRectangleBorder(
-//                             borderRadius: BorderRadius.circular(10),
-//                           )
-//
-//                         ),
-//                           child: const Text('Book',
-//                           style: TextStyle(
-//                             color: Colors.white,
-//                           ),),
-//                       )
-//                     ),
-//                   )
-//             ]
-//
-//         )
-//     ),
-//       ),
-//     );
-//   }
-// }
-
 class BookingPage extends StatefulWidget {
+  const BookingPage({super.key});
+
   @override
   _BookingPageState createState() => _BookingPageState();
 }
@@ -213,11 +62,6 @@ class _BookingPageState extends State<BookingPage> {
           fontSize: 36.0,
         ),
         actions:  <Widget>[
-          // Image(
-          //   image: AssetImage('assets/images/MECH.png'),
-          //   height: 25,
-          //   width: 25,
-          // )
           IconButton(
             icon: const Icon(Icons.car_repair_rounded),
             onPressed: () {
@@ -312,11 +156,10 @@ class _BookingPageState extends State<BookingPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(
-                                       MaterialPageRoute(
-                                         builder: (context)=> const ThankYouScreen(),
-                                       ),
-                                    );
-                        // TODO: Implement payment logic
+                          MaterialPageRoute(
+                            builder: (context)=> const ThankYouScreen(),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal.shade300,

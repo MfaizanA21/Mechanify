@@ -37,13 +37,13 @@ class TextInput extends StatelessWidget {
                 size: 30,
               ),
             ),
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               color: Colors.white,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
-          style: TextStyle(
+          style: const TextStyle(
             // Define your default text style here
             color: Colors.black,
             fontSize: 16,
