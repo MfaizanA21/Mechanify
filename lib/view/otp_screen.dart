@@ -3,8 +3,8 @@ import 'package:carobar/view/home_screen.dart';
 
 class OtpScreen extends StatelessWidget {
   final TextEditingController _textController = TextEditingController();
-  OtpScreen({super.key});
 
+  OtpScreen({ key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,12 @@ class OtpScreen extends StatelessWidget {
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            const SizedBox(height: 16.0),
+            Image.asset(
+              'assets/images/936.png', // Replace with your image path
+              width: 100.0,
+              height: 100.0,
             ),
             const SizedBox(height: 16.0),
             TextField(
@@ -60,7 +66,7 @@ class OtpScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context)=> const Home(),
+                    builder: (context) => const Home(),
                   ),
                 );
               },

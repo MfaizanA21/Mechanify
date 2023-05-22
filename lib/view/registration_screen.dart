@@ -157,6 +157,8 @@ import '../viewModel/Utils/Utils.dart';
 //   }
 // }
 
+
+
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
 
@@ -165,15 +167,12 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
-
-   bool loading = false;
-   final _formKey = GlobalKey<FormState>();
-  final TextEditingController  _emailController = TextEditingController();
+  bool loading = false;
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   FirebaseAuth _auth = FirebaseAuth.instance;
-
-  // _RegistrationScreenState({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -181,11 +180,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: SingleChildScrollView(
         child: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[Colors.teal.shade50, Colors.teal.shade400]
-              )
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[Colors.teal.shade700, Colors.white38],
+            ),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 40.0),
           height: MediaQuery.of(context).size.height,
@@ -195,32 +194,50 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: AssetImage('assets/images/MECH2.png'),
-                  radius: 80.0,
+                const SizedBox(height: 20.0),
+                Text(
+                  'Mechanify',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
                 ),
                 const SizedBox(height: 30.0),
-                buildTextField(_emailController, 'Email or Phone', Icons.mail_outline_rounded),
+                buildTextField(
+                  _emailController,
+                  'Email or Phone',
+                  Icons.mail_outline_rounded,
+                ),
                 const SizedBox(height: 20.0),
-                buildTextField(_passwordController, 'Password', Icons.lock_outline_rounded),
+                buildTextField(
+                  _passwordController,
+                  'Password',
+                  Icons.lock_outline_rounded,
+                ),
                 const SizedBox(height: 20.0),
                 ElevatedButton(
-                    onPressed: () {
-                      if(_formKey.currentState!.validate()) {
-                        login();
-                      }
-                    },
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      login();
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.teal.shade600,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                   ),
-                  child: loading? const CircularProgressIndicator(backgroundColor: Colors.white,strokeWidth: 3): const Text('Sign Up',
+                  child: loading
+                      ? const CircularProgressIndicator(
+                    backgroundColor: Colors.white,
+                    strokeWidth: 3,
+                  )
+                      : const Text(
+                    'Sign Up',
                     style: TextStyle(color: Colors.white),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -229,36 +246,37 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 
-  Widget buildTextField(TextEditingController controller, String labelText, IconData icon) {
+  Widget buildTextField(
+      TextEditingController controller, String labelText, IconData icon) {
     return TextField(
       controller: controller,
-      style:  TextStyle(color: Colors.teal.shade700),
+      style: TextStyle(color: Colors.teal.shade700),
       decoration: InputDecoration(
         labelText: labelText,
-        labelStyle:  TextStyle(color: Colors.teal.shade700),
+        labelStyle: TextStyle(color: Colors.teal.shade700),
         prefixIcon: Icon(icon, color: Colors.teal.shade700),
-        enabledBorder:  OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.teal.shade700),
         ),
-        focusedBorder:  OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.teal.shade700),
         ),
       ),
     );
   }
 
-  void login () {
+  void login() {
     setState(() {
       loading = true;
     });
-    _auth.createUserWithEmailAndPassword(
+    _auth
+        .createUserWithEmailAndPassword(
         email: _emailController.text.toString(),
-        password: _passwordController.text.toString()
-    ).then((value) {
+        password: _passwordController.text.toString())
+        .then((value) {
       setState(() {
         loading = false;
       });
-
     }).onError((error, stackTrace) {
       Utils().toastMessage(error.toString());
       setState(() {
